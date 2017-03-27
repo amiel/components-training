@@ -10,9 +10,7 @@ export default Ember.Controller.extend({
     },
 
     togglePanel() {
-      if (!this.get('isFrozen')) {
-        this.toggleProperty('isOpen');
-      }
+      return !this.get('isFrozen');
     },
   }
 });
