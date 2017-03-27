@@ -3,17 +3,15 @@
   <div class="Panel__header">
     <a onclick={{action 'toggleBody'}}
        class="Panel__header__title">
-
-      Title here
-
+       {{title}}
     </a>
 
   </div>
 
-  <div class="Panel__body {{unless showBody "-hide"}}">
-
-    Body here
-
-  </div>
+  {{#if isOpen}}
+    <div class="Panel__body">
+      {{yield}}
+    </div>
+  {{/if}}
 
 </div>

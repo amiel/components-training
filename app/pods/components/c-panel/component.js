@@ -1,11 +1,11 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  showBody: true,
+  isOpen: true,
 
   actions: {
     toggleBody() {
-      this.toggleProperty('showBody');
+      this.toggleProperty('isOpen');
     },
   },
 });
