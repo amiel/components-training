@@ -10,4 +10,6 @@
   </p>
 {{/if}}
 
-<p>Show a loading message down here while the request is happening.</p>
+{{#if loadWeather.isRunning}}
+  <p>LOADING!!!</p>
+{{/if}}
