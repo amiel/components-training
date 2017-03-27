@@ -5,7 +5,7 @@ export default Ember.Component.extend({
 
   actions: {
     save() {
-      console.log('Save was clicked!');
-    }
-  }
+      this.get('user').save();
+    },
+  },
 });
