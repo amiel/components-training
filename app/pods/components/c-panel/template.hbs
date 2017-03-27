@@ -10,7 +10,11 @@
 
   {{#if isOpen}}
     <div class="Panel__body">
-      {{yield}}
+      {{#if hasBlock}}
+        {{yield}}
+      {{else}}
+        {{body}}
+      {{/if}}
     </div>
   {{/if}}
 
