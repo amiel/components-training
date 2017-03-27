@@ -5,8 +5,7 @@ export default Ember.Component.extend({
 
   loadWeather: task(function* (zip) {
     if (zip.length === 5) {
-      let weather = yield Ember.$.get('/weather', { zip: zip });
-      this.set('weather', weather);
+      return yield Ember.$.get('/weather', { zip: zip });
     }
   }).restartable(),
 });
