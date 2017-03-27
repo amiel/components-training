@@ -10,12 +10,10 @@
 
   </div>
 
-  {{#if showBody}}
-    <div class="Panel__body">
+  <div class="Panel__body {{unless showBody "-hide"}}">
 
-      Body here
+    Body here
 
-    </div>
-  {{/if}}
+  </div>
 
 </div>
