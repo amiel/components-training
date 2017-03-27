@@ -20,4 +20,8 @@
   cannot be opened or closed.
 </p>
 
-{{c-panel isFrozen=isFrozen}}
+{{c-panel isOpen=isOpen on-click-title=(action 'togglePanel')}}
+
+{{#c-panel title="ANOTHER PANEL"}}
+  This is the second panel
+{{/c-panel}}

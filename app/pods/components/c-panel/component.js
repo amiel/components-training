@@ -1,19 +1,22 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  isOpen: true,
-  isFrozen: false,
-
   title: 'Default block',
   body: 'Default body',
 
+  isOpen: true,
+
+  'on-click-title': null,
 
   actions: {
     toggleBody() {
-      // Do not allow toggling state when frozen
-      if (this.get('isFrozen')) { return; }
+      const fn = this.get('on-click-title');
 
-      this.toggleProperty('isOpen');
+      if (fn) {
+        fn();
+      } else {
+        this.toggleProperty('isOpen');
+      }
     },
   },
 });
