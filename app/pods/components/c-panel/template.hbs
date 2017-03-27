@@ -1,7 +1,8 @@
 <div class="Panel">
 
   <div class="Panel__header">
-    <a class="Panel__header__title">
+    <a onclick={{action 'toggleBody'}}
+       class="Panel__header__title">
 
       Title here
 
@@ -9,10 +10,12 @@
 
   </div>
 
-  <div class="Panel__body">
+  {{#if showBody}}
+    <div class="Panel__body">
 
-    Body here
+      Body here
 
-  </div>
+    </div>
+  {{/if}}
 
 </div>
