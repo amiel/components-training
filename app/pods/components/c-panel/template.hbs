@@ -1,19 +1,21 @@
 <div class="Panel">
 
   <div class="Panel__header">
-    <a href="#"
+    <a onclick={{action 'toggleBody'}}
        class="Panel__header__title">
-
-      Title here
-
+       {{title}}
     </a>
 
   </div>
 
-  <div class="Panel__body">
-
-    Body here
-
-  </div>
+  {{#if isOpen}}
+    <div class="Panel__body">
+      {{#if hasBlock}}
+        {{yield}}
+      {{else}}
+        {{body}}
+      {{/if}}
+    </div>
+  {{/if}}
 
 </div>
