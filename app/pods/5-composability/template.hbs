@@ -26,7 +26,12 @@
 </p>
 
 {{#x-flyable isOpen=isOpen}}
-  {{x-square}}
+  {{x-square isOpen=isOpen}}
 {{/x-flyable}}
+
+{{#x-flyable isOpen=(not isOpen)}}
+  {{x-circle}}
+{{/x-flyable}}
+
 
 <br><br>
