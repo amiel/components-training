@@ -1,12 +1,23 @@
 <div class="Carousel-slider__display">
-  <div class="Carousel-slider__display-inner" style="{{displayShift}}">
+  <div class="Carousel-slider__display-inner" style={{displayShift}}>
+    {{#each slides as |slide index|}}
+      <a
+        class="Carousel-slider__slide"
+        style="background-color: {{slide.color}}"
+        onclick={{action 'selectSlide' index}}
+        >
+      </a>
+    {{/each}}
   </div>
 </div>
 
 <div class="Carousel-slider__nav">
+  {{#each slides as |slide index|}}
     <a
-      href='#'
-      class="Carousel-slider__nav-item"
-      style="background-color: ">
+      class="Carousel-slider__nav-item {{if (eq currentSlide slide) 'Carousel-slider__nav-item--active'}}"
+      style="background-color: {{slide.color}}"
+      onclick={{action 'selectSlide' index}}
+      >
     </a>
+  {{/each}}
 </div>
